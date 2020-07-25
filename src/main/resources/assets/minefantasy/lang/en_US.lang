@@ -186,6 +186,12 @@ tile.hayRoof.half=Hay Slab
 tile.shingles.name=Clay Shingles
 tile.shingles.half=Clay Shingle Slab
 tile.shinglesRoof.name=Clay Shingle Roof
+tile.shinglesLightBlue.name=Light Blue Shingles
+tile.shinglesLightBlue.half=Light Blue Shingle Slab
+tile.shinglesRoofLightBlue.name=Light Blue Shingle Roof
+tile.shinglesFadedGreen.name=Faded Green Shingles
+tile.shinglesFadedGreen.half=Faded Green Shingle Slab
+tile.shinglesRoofFadedGreen.name=Faded Green Shingle Roof
 tile.polishedStone.name=Polished Stone
 tile.stonePillar.name=Stone Pillar
 

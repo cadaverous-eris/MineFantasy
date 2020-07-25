@@ -75,6 +75,10 @@ public class cfg {
     public static int stairCStoneRoughId;
     public static int shinglesId;
     public static int shinglesStairId;
+    public static int lightBlueShinglesId;
+    public static int lightBlueShinglesStairId;
+    public static int fadedGreenShinglesId;
+    public static int fadedGreenShinglesStairId;
     public static int polishedStoneId;
     public static int dogbowlId;
     public static int weaponRackId;   
@@ -323,6 +327,10 @@ public class cfg {
         
         shinglesId = Integer.parseInt(this.get("Clay Shingles", Configuration.CATEGORY_BLOCK, 246).getString());
         shinglesStairId = Integer.parseInt(this.get("Clay Shingle Roof", Configuration.CATEGORY_BLOCK, 249).getString());
+        lightBlueShinglesId = Integer.parseInt(this.get("Light Blue Shingles", Configuration.CATEGORY_BLOCK, 251).getString());
+        lightBlueShinglesStairId = Integer.parseInt(this.get("Light Blue Shingle Roof", Configuration.CATEGORY_BLOCK, 252).getString());
+        fadedGreenShinglesId = Integer.parseInt(this.get("Faded Green Shingles", Configuration.CATEGORY_BLOCK, 253).getString());
+        fadedGreenShinglesStairId = Integer.parseInt(this.get("Faded Green Shingle Roof", Configuration.CATEGORY_BLOCK, 254).getString());
         
         polishedStoneId = Integer.parseInt(this.get("Polished Stone", Configuration.CATEGORY_BLOCK, 250).getString());
         

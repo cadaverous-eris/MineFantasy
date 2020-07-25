@@ -313,6 +313,14 @@ public class RecipesMF {
             "HHH",
             'H', new ItemStack(BlockListMF.shingles, 1, 0),
         });
+        GameRegistry.addRecipe(new ItemStack(BlockListMF.stoneSingleSlab2, 6, 1), new Object[]{
+            "HHH",
+            'H', new ItemStack(BlockListMF.lightBlueShingles, 1, 0),
+        });
+        GameRegistry.addRecipe(new ItemStack(BlockListMF.stoneSingleSlab2, 6, 2), new Object[]{
+            "HHH",
+            'H', new ItemStack(BlockListMF.fadedGreenShingles, 1, 0),
+        });
         
         GameRegistry.addRecipe(new ItemStack(BlockListMF.polishedStone, 2, 0), new Object[]{
             "SS",
@@ -370,11 +378,42 @@ public class RecipesMF {
             "CC",
             "CC",
             'C', new ItemStack(Block.hardenedClay, 1, 0),});
+        GameRegistry.addRecipe(new ItemStack(BlockListMF.lightBlueShingles, 8), new Object[]{
+        		"SSS",
+        		"SDS",
+        		"SSS",
+            'S', new ItemStack(BlockListMF.shingles, 1, 0),
+            'D', new ItemStack(Item.dyePowder, 1, 12),
+        });
+        GameRegistry.addRecipe(new ItemStack(BlockListMF.fadedGreenShingles, 8), new Object[]{
+        		"SSS",
+        		"SDS",
+        		"SSS",
+            'S', new ItemStack(BlockListMF.shingles, 1, 0),
+            'D', com(ItemListMF.vine),
+        });
+        GameRegistry.addRecipe(new ItemStack(BlockListMF.fadedGreenShingles, 8), new Object[]{
+        		"SSS",
+        		"SDS",
+        		"SSS",
+            'S', new ItemStack(BlockListMF.shingles, 1, 0),
+            'D', new ItemStack(Item.dyePowder, 1, 10),
+        });
         GameRegistry.addRecipe(new ItemStack(BlockListMF.shinglesRoof, 4), new Object[]{
             "S  ",
             "SS ",
             "SSS",
             'S', new ItemStack(BlockListMF.shingles, 1, 0),});
+        GameRegistry.addRecipe(new ItemStack(BlockListMF.lightBlueShinglesRoof, 4), new Object[]{
+                "S  ",
+                "SS ",
+                "SSS",
+                'S', new ItemStack(BlockListMF.lightBlueShingles, 1, 0),});
+        GameRegistry.addRecipe(new ItemStack(BlockListMF.fadedGreenShinglesRoof, 4), new Object[]{
+                "S  ",
+                "SS ",
+                "SSS",
+                'S', new ItemStack(BlockListMF.fadedGreenShingles, 1, 0),});
         
         GameRegistry.addRecipe(new ItemStack(BlockListMF.dogbowl), new Object[]{
                     "PBP",

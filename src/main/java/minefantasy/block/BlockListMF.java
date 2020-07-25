@@ -124,6 +124,10 @@ public class BlockListMF
     
     public static final Block shingles = new BlockMedieval(cfg.shinglesId, Material.rock, cfg.shinglesId).setHardness(1.25F).setResistance(7.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("shingles");
     public static final Block shinglesRoof = new BlockMedievalStairs(cfg.shinglesStairId, shingles).setLightOpacity(1).setUnlocalizedName("shinglesRoof");
+    public static final Block lightBlueShingles = new BlockMedieval(cfg.lightBlueShinglesId, Material.rock, cfg.lightBlueShinglesId).setHardness(1.25F).setResistance(7.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("shinglesLightBlue");
+    public static final Block lightBlueShinglesRoof = new BlockMedievalStairs(cfg.lightBlueShinglesStairId, lightBlueShingles).setLightOpacity(1).setUnlocalizedName("shinglesRoofLightBlue");
+    public static final Block fadedGreenShingles = new BlockMedieval(cfg.fadedGreenShinglesId, Material.rock, cfg.fadedGreenShinglesId).setHardness(1.25F).setResistance(7.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("shinglesFadedGreen");
+    public static final Block fadedGreenShinglesRoof = new BlockMedievalStairs(cfg.fadedGreenShinglesStairId, fadedGreenShingles).setLightOpacity(1).setUnlocalizedName("shinglesRoofFadedGreen");
     
     public static final Block polishedStone = new BlockPolishedStone(cfg.polishedStoneId).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("polishedStone");
     
@@ -213,6 +217,10 @@ public class BlockListMF
         GameRegistry.registerBlock(hayRoof, "hayRoof");
         GameRegistry.registerBlock(shingles, "shingles");
         GameRegistry.registerBlock(shinglesRoof, "shinglesRoof");
+        GameRegistry.registerBlock(lightBlueShingles, "shinglesLightBlue");
+        GameRegistry.registerBlock(lightBlueShinglesRoof, "shinglesRoofLightBlue");
+        GameRegistry.registerBlock(fadedGreenShingles, "shinglesFadedGreen");
+        GameRegistry.registerBlock(fadedGreenShinglesRoof, "shinglesRoofFadedGreen");
         GameRegistry.registerBlock(polishedStone, ItemBlockPolishedStone.class, "polishedStone");
         
     }

@@ -31,11 +31,11 @@ public class ItemStoneSlab2MF extends ItemSlab {
         switch (i) {
             case 0:
                 return StatCollector.translateToLocal("tile.shingles.half");
-            /*case 1:
-                return StatCollector.translateToLocal("tile.granite.half");
+            case 1:
+                return StatCollector.translateToLocal("tile.shinglesLightBlue.half");
             case 2:
-                return StatCollector.translateToLocal("tile.granite.brick.half");
-            case 3:
+                return StatCollector.translateToLocal("tile.shinglesFadedGreen.half");
+                /*case 3:
                 return StatCollector.translateToLocal("tile.smoothstone.half");
             case 4:
                 return StatCollector.translateToLocal("tile.mudBrick.half");

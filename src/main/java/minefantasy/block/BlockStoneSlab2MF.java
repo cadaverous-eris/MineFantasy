@@ -17,7 +17,11 @@ import net.minecraft.world.World;
 public class BlockStoneSlab2MF extends BlockHalfSlab
 {
     /** The type of tree this slab came from. */
-    public static final String[] stoneType = new String[] { "shingles" };
+    public static final String[] stoneType = new String[] {
+    		"shingles",
+    		"shinglesLightBlue",
+    		"shinglesFadedGreen",
+    };
 
     public BlockStoneSlab2MF(int id, boolean fullSize) {
         super(id, fullSize, Material.rock);
@@ -34,11 +38,11 @@ public class BlockStoneSlab2MF extends BlockHalfSlab
     	switch (meta) {
     	case 0:
     		return BlockListMF.shingles.getIcon(0, 0);
-    	/*case 1:
-    		return BlockListMF.granite.getIcon(0, 0);
+    	case 1:
+    		return BlockListMF.lightBlueShingles.getIcon(0, 0);
     	case 2:
-    		return BlockListMF.graniteBrick.getIcon(0, 0);
-    	case 3:
+    		return BlockListMF.fadedGreenShingles.getIcon(0, 0);
+    	/*case 3:
     		return Block.stone.getIcon(0, 0);
     	case 4:
     		return BlockListMF.mudBrick.getIcon(0, 0);
@@ -55,17 +59,26 @@ public class BlockStoneSlab2MF extends BlockHalfSlab
     }
     @Override
     public float getBlockHardness(World world, int x, int y, int z) {
-    	float f = 3.0F;
     	int meta = world.getBlockMetadata(x, y, z);
     	meta = meta & 7;
-    	if (meta == 0) f = 1.25F;
-    	/*if (meta == 1) f = 5.0F;
-    	if (meta == 2) f = 8.0F;
-    	if (meta == 3) f = 1.0F;
-    	if (meta == 4) f = 0.7F;
-    	if (meta == 5) f = 5.0F;
-    	if (meta == 6) f = 0.7F;*/
-    	return f;
+    	switch (meta) {
+    	case 0:
+    		return 1.25F;
+    	case 1:
+    		return 1.25F;
+    	case 2:
+    		return 1.25F;
+    	case 3:
+    	//	return 1.0F;
+    	case 4:
+    	//	return 0.7F;
+    	case 5:
+    	//	return 5.0F;
+    	case 6:
+    	//	return 0.7F;
+    	default:
+    		return 3.0F;
+    	}
     }
 
     /**
