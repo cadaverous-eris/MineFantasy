@@ -7,6 +7,7 @@ import biomesoplenty.worldgen.structure.BOPMapGenVillage;
 import minefantasy.MineFantasyBase;
 import minefantasy.api.MineFantasyAPI;
 import minefantasy.api.anvil.ITongs;
+import minefantasy.api.armour.EnumArmourClass;
 import minefantasy.api.arrow.ISpecialBow;
 import minefantasy.api.forge.TongsHelper;
 import minefantasy.api.weapon.EnumWeaponType;
@@ -101,9 +102,12 @@ import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.EntityInteractEvent;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.terraingen.InitMapGenEvent;
 import net.minecraftforge.event.world.ChunkDataEvent;
 import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class EventManagerMF {
 
@@ -1679,5 +1683,17 @@ public class EventManagerMF {
 	// public void chunkLoad(ChunkDataEvent.Load event) {
 		//System.out.println("(" + event.getChunk().xPosition + ", " + event.getChunk().zPosition + ")");
 	// }
+	
+	@SideOnly(Side.CLIENT)
+	@ForgeSubscribe
+	public void itemTooltip(ItemTooltipEvent event) {
+		if ((event.itemStack != null) && (event.itemStack.getItem() != null) && (event.itemStack.getItem() instanceof ItemArmor)) {
+			final EnumArmourClass armorClass = TacticalManager.getClassFor(event.itemStack);
+			if (armorClass != EnumArmourClass.UNARMOURED) {
+				event.toolTip.add("");
+				event.toolTip.add(StatCollector.translateToLocal("armorclass." + armorClass.getName()));
+			}
+		}
+	}
 
 }

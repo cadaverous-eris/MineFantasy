@@ -12,6 +12,11 @@ attribute.arrow.force=Projectile Force
 attribute.shield.threshold=Damage Threshold
 info.fuel=Fuel
 
+armorclass.Light=Light Armor
+armorclass.Medium=Medium Armor
+armorclass.Heavy=Heavy Armor
+armorclass.Plate=Plate Armor
+
 message.dragon_spawn_0=You hear a mighty roar to the %1$s
 message.dragon_spawn_1=You smell smoke coming from the %1$s
 message.dragon_spawn_2=You smell brimstone drifting toward you from the %1$s

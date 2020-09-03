@@ -176,7 +176,8 @@ public class ItemHotItem extends Item implements IHotItem {
 	public void registerIcons(IconRegister reg) {
 
 	}
-
+	
+	@Override
 	public ItemStack onItemRightClick(ItemStack item, World world, EntityPlayer player) {
 		MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(world, player, true);
 

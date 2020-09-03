@@ -44,7 +44,7 @@ public class BlockSlag extends Block
     @Override
     public void registerIcons(IconRegister reg)
     {
-        this.blockIcon = reg.registerIcon("minefantasy:Basic/Slag_MF");
+    	this.blockIcon = reg.registerIcon("minefantasy:Basic/Slag_MF");
     }
 
     /**

@@ -232,34 +232,22 @@ public class TacticalManager {
 	public static EnumArmourClass getClassInSlot(EntityPlayer player, int i) {
 		return getClassFor(armourInSlot(player, i));
 	}
-	public static EnumArmourClass getClassFor(ItemStack armour)
-	{
-		if(armour == null)
-		{
+	public static EnumArmourClass getClassFor(ItemStack armour) {
+		if (armour == null) {
 			return EnumArmourClass.UNARMOURED;
 		}
 		EnumArmourClass AC = EnumArmourClass.HEAVY;
 		
-		if(armour.itemID == Item.helmetLeather.itemID || armour.itemID == Item.plateLeather.itemID || armour.itemID == Item.legsLeather.itemID || armour.itemID == Item.bootsLeather.itemID)
-		{
+		if (armour.itemID == Item.helmetLeather.itemID || armour.itemID == Item.plateLeather.itemID || armour.itemID == Item.legsLeather.itemID || armour.itemID == Item.bootsLeather.itemID) {
 			AC = EnumArmourClass.LIGHT;
-		}
-		else if(armour.getItem().getClass().getName().endsWith("MoCItemArmor"))
-		{
+		} else if (armour.getItem().getClass().getName().endsWith("MoCItemArmor")) {
 			AC = EnumArmourClass.LIGHT;
-		}
-		else if(armour.itemID == Item.helmetChain.itemID || armour.itemID == Item.plateChain.itemID || armour.itemID == Item.legsChain.itemID || armour.itemID == Item.bootsChain.itemID)
-		{
+		} else if (armour.itemID == Item.helmetChain.itemID || armour.itemID == Item.plateChain.itemID || armour.itemID == Item.legsChain.itemID || armour.itemID == Item.bootsChain.itemID) {
 			AC = EnumArmourClass.MEDIUM;
-		}
-		else if(armour.getItem() instanceof IArmourClass)
-		{
-			AC = ((IArmourClass)armour.getItem()).getArmourClass();
-		}
-		else
-		{
-			if(armour.getItem() != null && armour.getItem() instanceof ItemArmor)
-			{
+		} else if (armour.getItem() instanceof IArmourClass) {
+			AC = ((IArmourClass) armour.getItem()).getArmourClass();
+		} else {
+			if (armour.getItem() != null && armour.getItem() instanceof ItemArmor) {
 				EnumArmorMaterial material = ((ItemArmor)armour.getItem()).getArmorMaterial();
 				AC = getClassOf(material, AC);
 			}
@@ -272,16 +260,11 @@ public class TacticalManager {
 	private static EnumArmourClass getClassOf(EnumArmorMaterial material, EnumArmourClass AC) {
 		return AC;
 	}
-	public static int getHearing(Entity entity)
-	{
-		if(entity instanceof ISpecialSenses)
-		{
+	public static int getHearing(Entity entity) {
+		if (entity instanceof ISpecialSenses) {
 			return((ISpecialSenses)entity).getSight();
-		}
-		if(entity instanceof EntityMob)
-		{
-			if(((EntityMob)entity).getCreatureAttribute() == EnumCreatureAttribute.UNDEAD)
-			{
+		} if (entity instanceof EntityMob) {
+			if (((EntityMob)entity).getCreatureAttribute() == EnumCreatureAttribute.UNDEAD) {
 				return 10;
 			}
 		}
@@ -293,8 +276,7 @@ public class TacticalManager {
 		return player.inventory.armorItemInSlot(i);
 	}
 	
-	public static int getSight(Entity entity)
-	{
+	public static int getSight(Entity entity) {
 		if(entity instanceof ISpecialSenses)
 		{
 			return((ISpecialSenses)entity).getSight();

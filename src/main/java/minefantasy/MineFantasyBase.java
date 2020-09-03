@@ -83,7 +83,7 @@ import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry.IVillageTradeHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-@Mod(modid = "MineFantasy", name = "Mine Fantasy", version = "1.4.9")
+@Mod(modid = "MineFantasy", name = "Mine Fantasy", version = "1.4.10", dependencies="after:ForgeMultipart;")
 @NetworkMod(clientSideRequired = true, serverSideRequired = true, channels = { "MineFantasy" }, packetHandler = PacketManagerMF.class)
 public class MineFantasyBase{
 	//data_minefantasy, cfg, MFProxy__common, MFProxy_client, EventManagerMF
@@ -97,15 +97,13 @@ public class MineFantasyBase{
 	public static SpawnerDragon dragon_spawner = null;
 	
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) 
-	{ 
+	public void preInit(FMLPreInitializationEvent event) { 
 		addModFlags();
 		Configuration config = new Configuration(
 				event.getSuggestedConfigurationFile());
 		new cfg().setConfig(config);
 		
-		if(isDebug())
-		{
+		if (isDebug()) {
 			System.out.println("MineFantasy: Debug mode ACTIVE");
 			HeatableItem.requiresHeating = false;
 		}

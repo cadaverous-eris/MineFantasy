@@ -834,7 +834,7 @@ public class EntityDragonSmall extends EntityFlyingMob implements IMob {
 		if ((dimension == 0 || dimension == -37)
 				&& (posY < 106 || worldObj.getHeightValue((int) posX, (int) posZ) < 106)) {
 			if (isInMountains()) {
-				if (posY < 90 || worldObj.getHeightValue((int) posX, (int) posZ) < 90) {
+				if (posY < 80 || worldObj.getHeightValue((int) posX, (int) posZ) < 80) {
 					return false;
 				}
 			} else {
@@ -847,17 +847,30 @@ public class EntityDragonSmall extends EntityFlyingMob implements IMob {
 			return false;
 		}
 
+		int playersWithGold = 0;
+		int nearbyPlayerCount = 0;
 		for (Object o : worldObj.loadedEntityList) {
 			if (o instanceof EntityDragonSmall) {
 				if (this.getDistanceToEntity((EntityDragonSmall) o) < 196) {
 					return false;
 				}
+			} else if (o instanceof EntityPlayer) {
+				final EntityPlayer nearbyPlayer = (EntityPlayer) o;
+				if (this.getDistanceToEntity(nearbyPlayer) < 320) {
+					nearbyPlayerCount++;
+					final ItemStack heldStack = nearbyPlayer.getHeldItem();
+					if ((heldStack != null) && (heldStack.getItem() == ItemListMF.misc) && (heldStack.getItemDamage() == ItemListMF.ingotGoldPure))
+						playersWithGold++;
+				}
 			}
 		}
 
 		int spawnDist = distanceToSpawn();
-		int chance = (int) (cfg.dragonChance
-				- Math.min(((spawnDist - getDistanceToSpawn()) * 0.025), cfg.dragonChance * 0.5));
+		int baseChance = (playersWithGold > 0) ?
+				(int) Math.ceil(cfg.dragonChance * (1.0f - (0.93f * (((float) playersWithGold) / nearbyPlayerCount)))) :
+				cfg.dragonChance;
+		int chance = (int) Math.max(baseChance - Math.min(((spawnDist - getDistanceToSpawn()) * 0.05), baseChance * 0.5), 300);
+		//System.out.println("Chance from cfg: " + cfg.dragonChance + ", base chance: " + baseChance + ", chance: " + chance);
 		if (this.rand.nextInt(chance) != (chance - 1)) {
 			return false;
 		}
